@@ -92,7 +92,8 @@ for i, nlu_url in enumerate(reversed(urls[:400]), 1):
         time.sleep(2)
 
     # print(json.dumps(response, indent=2))
-    print(i, response['retrieved_url'])
+    if response: 
+        print(i, response['retrieved_url'])
     for c in response['categories']:
         score, label = c['score'], c['label'] 
         # print("-", score, label)
